@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Experiências Portugal</title>
+  <meta name="description" content="Explore vinhos portugueses em roteiros personalizados com saídas de Brasília. Uma experiência única em cultura, gastronomia e conforto.">
+  <meta name="author" content="Experiências Portugal">
+  <meta name="robots" content="index, follow">
+  <style>  
+  
+
+    :root {
+  --verde: #4B9F4A;
+  --vermelho: #A8343C;
+  --creme: #F7F3EF;
+  --azul: #647C90;
+  --vinho: #561C24;
+ --fundo-pagina: #e600f3; /* tom salmão claro */
+
+  --fonte-titulo: 'Georgia', serif;
+  --fonte-texto: 'Helvetica Neue', Arial, sans-serif;
+}
+
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+  font-family: var(--fonte-texto);
+  background-color: var(--fundo-pagina);
+  color: #333;
+  line-height: 1.6;
+  padding-top: 70px;
+}
+
+
+    nav {
+      background-color: var(--vermelho);
+      padding: 1rem;
+      text-align: center;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 999;
+    }
+
+    nav a {
+      margin: 0 1rem;
+      text-decoration: none;
+      color: var(--creme);
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: var(--verde);
+    }
+body {
+  margin: 0;
+  font-family: var(--fonte-texto);
+  background-color: var(--creme);
+  color: #333;
+  padding-top: 70px; /* ajuste conforme a altura real do <nav> */
+}
+
+    header {
+  height: 50vh;
+  width: 80%;
+  margin: 2rem auto;
+  border-radius: 12px;
+
+  background: 
+    url('https://img.freepik.com/fotos-gratis/bandeira-de-portugal-na-parede_406939-8055.jpg') no-repeat center/cover,
+    linear-gradient(#561C24, #7e57c2);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  color: white;
+  padding: 2rem;
+}
+
+
+    header::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      border-radius: 12px;
+      z-index: 1;
+    }
+
+    header h1 {
+      font-family: var(--fonte-titulo);
+      font-size: 3rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    .banner-conteudo {
+      max-width: 80%;
+      margin: 3rem auto;
+      text-align: center;
+    }
+
+    .texto-superior h2 {
+      font-size: 1.8rem;
+      font-family: var(--fonte-titulo);
+      color: var(--vinho);
+    }
+
+    .texto-superior p {
+      font-size: 1.1rem;
+    }
+
+    .imagem-banner {
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+      margin-top: 1rem;
+    }
+
+    .content {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+
+    .content h3 {
+      color: var(--vinho);
+      font-family: var(--fonte-titulo);
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+    }
+
+    .grid-box {
+      display: grid;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .box {
+      padding: 1rem;
+      border-radius: 10px;
+      font-size: 1.05rem;
+      font-weight: 500;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      color: #fff;
+    }
+
+    .box {
+  background-color: var(--vinho);
+}
+
+
+    .button {
+      display: inline-block;
+      padding: 0.75rem 1.5rem;
+      background-color: var(--verde);
+      color: #fff;
+      text-decoration: none;
+      border-radius: 4px;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+      margin-top: 1rem;
+    }
+
+    .button:hover {
+      background-color: var(--vermelho);
+    }
+
+    footer {
+      background-color: var(--azul);
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 3rem;
+    }
+
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25d366;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      z-index: 999;
+      animation: pulse 2s infinite;
+    }
+
+    .whatsapp-float svg {
+      width: 30px;
+      height: 30px;
+      fill: white;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+      70% { transform: scale(1.05); box-shadow: 0 0 0 10px rgba(37, 211, 102, 0); }
+      100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2rem;
+      }
+
+      .texto-superior h2 {
+        font-size: 1.4rem;
+      }
+    } 
+    
+.carousel {
+  position: relative;
+  max-width: 100%;
+  margin: auto;
+  border-radius: 12px;
+  overflow: hidden;
+}
+.carousel-slide {
+  display: none;
+  position: relative;
+}
+.carousel-slide img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  display: block;
+}
+.carousel-text {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  background-color: rgba(0,0,0,0.5);
+  color: white;
+  padding: 1rem;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  max-width: 80%;
+  font-weight: bold;
+}
+  </style>
+</head>
+<body>
+<nav>
+  <a href="#inicio">Início</a>
+  <a href="#roteiro-banner">Roteiro</a>
+  <a href="#o-que-inclui">Sobre</a>
+  <a href="#rodape">Contato</a>
+</nav>
+
+
+<header id="inicio">
+  <h1>Experiências Portugal</h1>
+</header>
+
+<section class="banner-conteudo">
+  <div class="texto-superior">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Flag_of_Portugal.svg" alt="Bandeira" style="width: 50px;">
+    <h2>Explore os Vinhos de Portugal em uma Experiência Inesquecível</h2>
+    <p>Roteiros exclusivos com saídas de Brasília. Viva o charme das vinícolas portuguesas com conforto, gastronomia e história.</p>
+  </div>
+  <img src="Design sem nome 1.png" alt="Banner Portugal" class="imagem-banner">
+</section>
+
+<section class="content" id="o-que-inclui">
+  <h3>O Que Está Incluído?</h3>
+  <div class="grid-box">
+    <div class="box vermelho">✈️ Voos ida e volta saindo de Brasília</div>
+    <div class="box verde">🏨 Hospedagens em locais selecionados</div>
+    <div class="box vermelho">🍇 Visitas guiadas a vinícolas no Douro, Alentejo e Dão</div>
+    <div class="box verde">🍷 Degustações premium com enólogos renomados</div>
+    <div class="box vermelho">🍽️ Experiências gastronômicas autênticas</div>
+    <div class="box verde">🚐 Transporte terrestre com conforto e segurança</div>
+    <div class="box vermelho">🧭 Acompanhamento de guia especializado</div>
+  </div>
+</section>
+
+<section class="content" id="roteiro-banner">
+  <h3>Roteiro Resumido – 7 Noites e 9 Dias</h3>
+  <div class="carousel">
+    <div class="carousel-slide fade">
+      <img src="lisboa.jpg" alt="Lisboa">
+      <div class="carousel-text">Dia 1: Chegada em Lisboa com jantar típico.</div>
+    </div>
+    <div class="carousel-slide fade">
+      <img src="Região do Alentejo.png" alt="Alentejo">
+      <div class="carousel-text">Dias 2-3: Alentejo – vinhos tintos encorpados e vilarejos medievais.</div>
+    </div>
+    <div class="carousel-slide fade">
+      <img src="vale do douro.png" alt="Vale do Douro">
+      <div class="carousel-text">Dias 4-6: Vale do Douro – visita a quintas e passeio de barco.</div>
+    </div>
+    <div class="carousel-slide fade">
+      <img src="cidade do porto.webp" alt="Porto">
+      <div class="carousel-text">Dia 7: Porto – cidade vibrante e degustação de vinhos do Porto.</div>
+    </div>
+    <div class="carousel-slide fade">
+      <img src="região do Dão.png" alt="Dão">
+      <div class="carousel-text">Dia 8: Região do Dão – terroirs únicos e paisagens montanhosas.</div>
+    </div>
+    <div class="carousel-slide fade">
+      <img src="retorno.webp" alt="Retorno">
+      <div class="carousel-text">Dia 9: Retorno a Lisboa e voo para Brasília.</div>
+    </div>
+  </div>
+</section>
+
+<section class="content">
+  <h3>🎯 Por Que Escolher Este Roteiro?</h3>
+  <div class="grid-box">
+    <div class="box verde">✅ Foco em enoturismo de alto nível</div>
+    <div class="box vermelho">✅ Grupos pequenos e personalizados</div>
+    <div class="box verde">✅ Suporte total durante a experiência</div>
+    <div class="box vermelho">✅ Saída garantida de Brasília</div>
+  </div>
+</section>
+
+<section class="content">
+  <h3>📆 Datas & Promoções</h3>
+  <div class="grid-box">
+    <div class="box verde">• Próxima saída: <strong>03 de outubro</strong></div>
+    <div class="box vermelho">• Vagas limitadas!</div>
+    <div class="box verde">🎁 Promoção até <strong>30 de julho</strong> com brinde exclusivo!</div>
+  </div>
+</section>
+
+<section class="content" id="contato">
+  <h3>Formulario de Interesse</h3>
+  <p>Para garantir sua vaga ou receber mais informações, clique no botão abaixo:</p>
+  <a class="button" href="formulario.html">Acessar Formulário </a>
+</section>
+
+<footer id="rodape">
+  <p>&copy; 2025 Experiências Portugal. Todos os direitos reservados.</p>
+  <p>📞 Telefone: (61) 99999-9999</p>
+  <p>✉️ E-mail: contato@experienciasportugal.com</p>
+  <p>🌐 Redes Sociais: @experienciasportugal</p>
+</footer>
+
+
+<a class="whatsapp-float" href="https://wa.me/556296301515?text=Olá!%20Tenho%20interesse%20no%20Experiência%20Portugal" target="_blank" title="Fale conosco no WhatsApp">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" style="width: 32px; height: 32px;">
+</a>
+<script>
+let slideIndex = 0;
+showSlides();
+function showSlides() {
+  let i;
+  const slides = document.getElementsByClassName("carousel-slide");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}
+  slides[slideIndex - 1].style.display = "block";
+  setTimeout(showSlides, 4000); // Muda a cada 4 segundos
+}
+</script>
+
+
+
+</body>
+</html>
