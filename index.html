@@ -29,24 +29,29 @@
       box-sizing: border-box;
     }
 
-    body {
+  body {
+  margin: 0;
   font-family: var(--fonte-texto);
-  background-color: var(--fundo-pagina);
+  background: url('imagem de fundo.jpg') no-repeat center center fixed;
+  background-size: cover;
   color: #333;
   line-height: 1.6;
   padding-top: 70px;
 }
 
 
-    nav {
-       background-color: var(--vinho);
-      padding: 1rem;
-      text-align: center;
-      position: fixed;
-      top: 0;
-      width: 100%;
-      z-index: 999;
-    }
+
+
+   nav {
+  background-color: rgba(86, 28, 36, 0.95); /* vinho sólido translúcido */
+  padding: 1rem;
+  text-align: center;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
 
     nav a {
       margin: 0 1rem;
@@ -59,15 +64,8 @@
     nav a:hover {
       color: var(--verde);
     }
-body {
-  margin: 0;
-  font-family: var(--fonte-texto);
-  background-color: var(--creme);
-  color: #333;
-  padding-top: 70px; /* ajuste conforme a altura real do <nav> */
-}
 
- header {
+header {
   height: 50vh;
   width: 80%;
   margin: 2rem auto;
@@ -81,6 +79,7 @@ body {
   position: relative;
   padding: 2rem;
 }
+
 
 header img {
   max-width: 500px !important;
@@ -179,13 +178,15 @@ header::before {
       background-color: var(--vermelho);
     }
 
-    footer {
-      background-color: var(--azul);
-      color: white;
-      text-align: center;
-      padding: 1rem;
-      margin-top: 3rem;
-    }
+   
+footer {
+  background-color: rgba(86, 28, 36, 0.95); /* vinho sólido escuro para rodapé */
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 3rem;
+  box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.3);
+}
 
     .whatsapp-float {
       position: fixed;
@@ -237,6 +238,10 @@ header::before {
   border-radius: 12px;
   overflow: hidden;
 }
+.carousel-slide.fade {
+  transition: opacity 0.5s ease-in-out;
+}
+
 .carousel-slide {
   display: none;
   position: relative;
@@ -286,6 +291,19 @@ header::before {
 .prev:hover, .next:hover {
   background-color: rgba(0, 0, 0, 0.8);
 }
+.content,
+.banner-conteudo {
+  background-color: rgba(255, 255, 255, 0.85); /* fundo claro translúcido */
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.box {
+  background-color: rgba(86, 28, 36, 0.9); /* vinho escuro translúcido */
+}
+
+
 
   </style>
 </head>
@@ -354,19 +372,6 @@ header::before {
     </div>
     <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
 <a class="next" onclick="plusSlides(1)">&#10095;</a>
-<div class="carousel">
-  <!-- Slides aqui -->
-  <div class="carousel-slide fade">...</div>
-  <div class="carousel-slide fade">...</div>
-  <!-- ... -->
-
-  <!-- Botões de navegação -->
-  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-  <a class="next" onclick="plusSlides(1)">&#10095;</a>
-</div>
-
-
-  </div>
 </section>
 
 <section class="content">
@@ -402,7 +407,7 @@ header::before {
 </footer>
 
 
-<a class="whatsapp-float" href="https://wa.me/556296301515?text=Olá!%20Tenho%20interesse%20no%20Experiência%20Portugal" target="_blank" title="Fale conosco no WhatsApp">
+<a class="whatsapp-float" href="https://wa.me/+5561996226222?text=Olá!%20Tenho%20interesse%20no%20Experiência%20Portugal" target="_blank" title="Fale conosco no WhatsApp">
   <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" style="width: 32px; height: 32px;">
 </a>
 <script>
