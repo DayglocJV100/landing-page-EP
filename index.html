@@ -445,11 +445,35 @@ footer {
   </div>
 </section>
 
-<section class="content" id="contato">
-  <h3>Formulario de interesse</h3>
-  <p>Para garantir sua vaga ou receber mais informações, clique no botão abaixo:</p>
-  <a class="button" href="formulario.html">Acessar formulário </a>
+<section class="content" id="contato" style="
+  background: url('6664041.jpg') no-repeat center center;
+  background-size: cover;
+  padding: 3rem 1rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);">
+  
+  <div class="form-container" style="
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 2rem;
+    border-radius: 10px;
+    max-width: 400px;
+    margin: 0 auto;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    text-align: center;">
+    
+    <h3 style="color: #561C24; margin-bottom: 1rem;">Formulário de Interesse</h3>
+    
+    <form action="https://formspree.io/f/mayvlrzk" method="POST" style="display: flex; flex-direction: column;">
+      <input type="text" name="nome" placeholder="Nome completo" required style="padding: 0.8rem; margin-bottom: 1rem; border: 1px solid #ccc; border-radius: 6px;">
+      <input type="email" name="email" placeholder="Seu e-mail" required style="padding: 0.8rem; margin-bottom: 1rem; border: 1px solid #ccc; border-radius: 6px;">
+      <input type="tel" name="telefone" placeholder="Seu telefone" required style="padding: 0.8rem; margin-bottom: 1rem; border: 1px solid #ccc; border-radius: 6px;">
+      <input type="text" name="data" placeholder="Data de interesse (opcional)" style="padding: 0.8rem; margin-bottom: 1rem; border: 1px solid #ccc; border-radius: 6px;">
+      <button type="submit" style="background-color: #561C24; color: #fff; padding: 0.8rem; border: none; border-radius: 6px; font-size: 1rem; cursor: pointer;">Enviar</button>
+    </form>
+  </div>
 </section>
+
+
 
 <footer id="rodape">
   <p>&copy; 2025 Experiências Portugal. Todos os direitos reservados.</p>
