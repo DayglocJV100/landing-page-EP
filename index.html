@@ -39,7 +39,7 @@
 
 
     nav {
-      background-color: var(--vermelho);
+       background-color: var(--vinho);
       padding: 1rem;
       text-align: center;
       position: fixed;
@@ -67,45 +67,34 @@ body {
   padding-top: 70px; /* ajuste conforme a altura real do <nav> */
 }
 
-    header {
+   header {
   height: 50vh;
   width: 80%;
   margin: 2rem auto;
   border-radius: 12px;
 
-  background: 
-    url('https://img.freepik.com/fotos-gratis/bandeira-de-portugal-na-parede_406939-8055.jpg') no-repeat center/cover,
-    linear-gradient(#561C24, #7e57c2);
+  background-color: transparent;
+
 
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  text-align: center;
   position: relative;
-  color: white;
   padding: 2rem;
+}
+header img {
+  max-width: 500px !important;
+  width: 100%;
+  height: auto;
+  display: block;
+  position: relative;
+  z-index: 2;
 }
 
 
-    header::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.5);
-      border-radius: 12px;
-      z-index: 1;
-    }
 
-    header h1 {
-      font-family: var(--fonte-titulo);
-      font-size: 3rem;
-      position: relative;
-      z-index: 2;
-    }
+
+
 
     .banner-conteudo {
       max-width: 80%;
@@ -259,6 +248,34 @@ body {
   max-width: 80%;
   font-weight: bold;
 }
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 0.5rem 1rem;
+  color: white;
+  font-weight: bold;
+  font-size: 2rem;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.5);
+  user-select: none;
+  z-index: 5;
+  transition: background-color 0.3s;
+}
+
+.prev {
+  left: 15px;
+}
+
+.next {
+  right: 15px;
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
   </style>
 </head>
 <body>
@@ -271,8 +288,9 @@ body {
 
 
 <header id="inicio">
-  <h1>Experiências Portugal</h1>
+  <img src="logo.png" alt="Logo Experiências Portugal" class="logo-header">
 </header>
+
 
 <section class="banner-conteudo">
   <div class="texto-superior">
@@ -323,6 +341,20 @@ body {
       <img src="retorno.webp" alt="Retorno">
       <div class="carousel-text">Dia 9: Retorno a Lisboa e voo para Brasília.</div>
     </div>
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+<a class="next" onclick="plusSlides(1)">&#10095;</a>
+<div class="carousel">
+  <!-- Slides aqui -->
+  <div class="carousel-slide fade">...</div>
+  <div class="carousel-slide fade">...</div>
+  <!-- ... -->
+
+  <!-- Botões de navegação -->
+  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
+
+
   </div>
 </section>
 
@@ -363,18 +395,22 @@ body {
   <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" style="width: 32px; height: 32px;">
 </a>
 <script>
-let slideIndex = 0;
-showSlides();
-function showSlides() {
+let slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function showSlides(n) {
   let i;
   const slides = document.getElementsByClassName("carousel-slide");
+  if (n > slides.length) { slideIndex = 1 }
+  if (n < 1) { slideIndex = slides.length }
   for (i = 0; i < slides.length; i++) {
     slides[i].style.display = "none";
   }
-  slideIndex++;
-  if (slideIndex > slides.length) {slideIndex = 1}
   slides[slideIndex - 1].style.display = "block";
-  setTimeout(showSlides, 4000); // Muda a cada 4 segundos
 }
 </script>
 
