@@ -7,6 +7,9 @@
   <meta name="description" content="Explore vinhos portugueses em roteiros personalizados com saídas de Brasília. Uma experiência única em cultura, gastronomia e conforto.">
   <meta name="author" content="Experiências Portugal">
   <meta name="robots" content="index, follow">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="icon" href="favicon.png" type="image/png">
+
   <style>  
   
 
@@ -177,16 +180,58 @@ header::before {
     .button:hover {
       background-color: var(--vermelho);
     }
-
-   
 footer {
-  background-color: rgba(86, 28, 36, 0.95); /* vinho sólido escuro para rodapé */
+  background-color: rgba(86, 28, 36, 0.95);
   color: white;
   text-align: center;
-  padding: 1rem;
-  margin-top: 3rem;
+  padding: 0.3rem 0; /* MENOR altura */
+  font-size: 0.7rem;
   box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.3);
 }
+.contato-icons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.15rem;
+  margin-bottom: 0;
+}
+
+.contato-item {
+  display: flex;
+  align-items: center;
+  gap: 0.08rem;
+  font-size: 0.2rem;            /* Tamanho super reduzido */
+  font-weight: 300;             /* Fonte fina */
+  color: white;
+  font-family: 'Arial', sans-serif;
+}
+
+.contato-item a {
+  color: white;
+  font-size: 0.3rem;            /* Ícone pequeno */
+  transition: color 0.3s ease;
+  font-weight: 300;
+}
+
+.contato-item a:hover {
+  color: var(--verde);
+}
+
+
+.contato-item a:hover {
+  color: var(--verde);
+}
+
+
+
+.footer-copy {
+  font-size: 0.6rem;
+  color: #ccc;
+  margin-top: 0.2rem;
+  padding-top: 0.2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
 
     .whatsapp-float {
       position: fixed;
@@ -300,10 +345,12 @@ footer {
 }
 .carousel-slide img {
   width: 100%;
-  height: auto;
+  height: 400px; /* altura fixa para todas */
+  object-fit: cover;
   border-radius: 12px;
   display: block;
 }
+
 .carousel-text {
   position: absolute;
   bottom: 20px;
@@ -352,9 +399,99 @@ footer {
 }
 
 .box {
+  padding: 1rem 1.2rem;
+  border-radius: 10px;
+  font-size: 1.05rem;
+  font-weight: 500;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  color: #fff;
+  margin-bottom: 1rem;
   background-color: rgba(86, 28, 36, 0.9); /* vinho escuro translúcido */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
+.box:hover {
+  background-color: rgba(86, 28, 36, 1); /* mais escuro no hover */
+}
+
+
+
+section[id] {
+  scroll-margin-top: 80px; /* altura da sua nav */
+} 
+   .contato-icons {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+    .contato-item {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.66rem; /* 40% menor que o tamanho base anterior (1.1rem) */
+      font-family: 'Arial', sans-serif;
+      font-weight: 300;
+      color: white;
+    }
+    .contato-item a {
+      color: white;
+      font-size: 0.84rem; /* 40% menor que o tamanho base anterior (1.4rem) */
+      transition: color 0.3s ease;
+    }
+    .contato-item a:hover {
+      color: var(--verde);
+    }
+
+
+.info-text {
+  display: none;
+  background-color: rgba(255, 255, 255, 0.95);
+  color: #333;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  border-radius: 8px;
+  box-shadow: inset 0 1px 4px rgba(0,0,0,0.1);
+  margin-top: 0.6rem;
+  padding: 1rem;
+}
+.box.active .info-text {
+  display: block;
+}
+
+.box.active .info-text {
+  max-height: 1000px; /* espaço suficiente para qualquer conteúdo */
+  padding: 1rem;
+}
+.accordion-box {
+  display: block;
+}
+.content h3 {
+  margin-bottom: 1.5rem;
+}
+nav {
+  background-color: rgba(86, 28, 36, 0.75);
+  backdrop-filter: blur(5px);
+}
+
+.carousel-indicators {
+  text-align: center;
+  margin-top: 1rem;
+}
+.carousel-indicators span {
+  display: inline-block;
+  height: 10px;
+  width: 10px;
+  background-color: #ccc;
+  border-radius: 50%;
+  margin: 0 5px;
+  cursor: pointer;
+}
+.carousel-indicators .active {
+  background-color: var(--vinho);
+}
 
 
   </style>
@@ -367,11 +504,9 @@ footer {
   <a href="#rodape">Contato</a>
 </nav>
 
-
 <header id="inicio">
   <img src="logo.png" alt="Logo Experiências Portugal" class="logo-header">
 </header>
-
 
 <section class="banner-conteudo">
   <div class="texto-superior">
@@ -384,14 +519,41 @@ footer {
 
 <section class="content" id="o-que-inclui">
   <h3>O que está incluído?</h3>
-  <div class="grid-box">
-    <div class="box vermelho">✈️ Voos ida e volta saindo de Brasília</div>
-    <div class="box verde">🏨 Hospedagens em locais selecionados</div>
-    <div class="box vermelho">🍇 Visitas guiadas a vinícolas no Douro, Alentejo e Dão</div>
-    <div class="box verde">🍷 Degustações premium com enólogos renomados</div>
-    <div class="box vermelho">🍽️ Experiências gastronômicas autênticas</div>
-    <div class="box verde">🚐 Transporte terrestre com conforto e segurança</div>
-    <div class="box vermelho">🧭 Acompanhamento de guia especializado</div>
+  <div class="accordion-box">
+    <div class="box vermelho" onclick="toggleInfo(this)">
+      ✈️ Voos ida e volta saindo de Brasília
+      <div class="info-text">Passagens de ida e volta com horários confortáveis e sem conexões longas, garantindo mais tempo útil em Portugal.</div>
+    </div>
+
+    <div class="box verde" onclick="toggleInfo(this)">
+      🏨 Hospedagens em locais selecionados
+      <div class="info-text">Hotéis de 4 e 5 estrelas com localização privilegiada, conforto e café da manhã incluso.</div>
+    </div>
+
+    <div class="box vermelho" onclick="toggleInfo(this)">
+      🍇 Visitas guiadas a vinícolas no Douro, Alentejo e Dão
+      <div class="info-text">Você será conduzido por sommeliers locais em vinícolas históricas, com acesso exclusivo a áreas restritas.</div>
+    </div>
+
+    <div class="box verde" onclick="toggleInfo(this)">
+      🍷 Degustações premium com enólogos renomados
+      <div class="info-text">Prove vinhos premiados e descubra os segredos de produção diretamente com quem faz.</div>
+    </div>
+
+    <div class="box vermelho" onclick="toggleInfo(this)">
+      🍽️ Experiências gastronômicas autênticas
+      <div class="info-text">Vivencie a culinária tradicional portuguesa com menus harmonizados e receitas regionais.</div>
+    </div>
+
+    <div class="box verde" onclick="toggleInfo(this)">
+      🚐 Transporte terrestre com conforto e segurança
+      <div class="info-text">Veículos executivos e climatizados com motoristas treinados em turismo receptivo.</div>
+    </div>
+
+    <div class="box vermelho" onclick="toggleInfo(this)">
+      🧭 Acompanhamento de guia especializado
+      <div class="info-text">Guia bilíngue especializado em história, cultura e vinhos, acompanhando todo o percurso.</div>
+    </div>
   </div>
 </section>
 
@@ -399,114 +561,199 @@ footer {
   <h3>Roteiro resumido – 7 Noites e 9 dias</h3>
   <div class="carousel">
     <div class="carousel-slide fade">
-      <img src="lisboa.jpg" alt="Lisboa">
-      <div class="carousel-text">Dia 1: Chegada em Lisboa com jantar típico.</div>
+      <img src="vidagp Palace.jpg" alt="Vidago Palace">
+      <div class="carousel-text">Dia 1: Chegada e hospedagem no icônico Vidago Palace Hotel.</div>
     </div>
     <div class="carousel-slide fade">
-      <img src="Região do Alentejo.png" alt="Alentejo">
-      <div class="carousel-text">Dias 2-3: Alentejo – vinhos tintos encorpados e vilarejos medievais.</div>
+      <img src="img-douro-valley-wineries-to-visit.jpg" alt="Vale do Douro">
+      <div class="carousel-text">Dias 2-3: Explorando vinhedos no coração do Vale do Douro.</div>
     </div>
     <div class="carousel-slide fade">
-      <img src="vale do douro.png" alt="Vale do Douro">
-      <div class="carousel-text">Dias 4-6: Vale do Douro – visita a quintas e passeio de barco.</div>
+      <img src="MW Douro Wine&Spa.jpg" alt="Spa e vinhos no Douro">
+      <div class="carousel-text">Dia 4: Relaxamento com vista no Douro Wine & Spa.</div>
     </div>
     <div class="carousel-slide fade">
-      <img src="cidade do porto.webp" alt="Porto">
-      <div class="carousel-text">Dia 7: Porto – cidade vibrante e degustação de vinhos do Porto.</div>
+      <img src="lamengo.webp" alt="Santuário de Lamego">
+      <div class="carousel-text">Dia 5: Visita ao Santuário de Lamego – arte e fé portuguesa.</div>
     </div>
     <div class="carousel-slide fade">
-      <img src="região do Dão.png" alt="Dão">
-      <div class="carousel-text">Dia 8: Região do Dão – terroirs únicos e paisagens montanhosas.</div>
+      <img src="porto.jpg" alt="Cidade do Porto">
+      <div class="carousel-text">Dias 6-7: Encantos do Porto e degustação de vinhos do Porto.</div>
     </div>
     <div class="carousel-slide fade">
-      <img src="retorno.webp" alt="Retorno">
-      <div class="carousel-text">Dia 9: Retorno a Lisboa e voo para Brasília.</div>
+      <img src="chaves.avif" alt="Cidade de Chaves">
+      <div class="carousel-text">Dia 8: Descubra Chaves – águas termais, cultura e charme histórico.</div>
     </div>
-    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-<a class="next" onclick="plusSlides(1)">&#10095;</a>
-</section>
 
+    <!-- Botões de navegação -->
+    <button class="prev" onclick="plusSlides(-1)" aria-label="Slide anterior">&#10094;</button>
+    <button class="next" onclick="plusSlides(1)" aria-label="Próximo slide">&#10095;</button>
+
+<div class="carousel-indicators">
+      <span onclick="currentSlide(1)"></span>
+      <span onclick="currentSlide(2)"></span>
+      <span onclick="currentSlide(3)"></span>
+      <span onclick="currentSlide(4)"></span>
+      <span onclick="currentSlide(5)"></span>
+      <span onclick="currentSlide(6)"></span>
+    </div>
+  </div>
+</section>
+<a class="whatsapp-float" href="https://wa.me/+5561996226222?text=Olá!%20Tenho%20interesse%20no%20Experiência%20Portugal" target="_blank" title="Fale conosco no WhatsApp">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" style="width: 32px; height: 32px;">
+</a>
 <section class="content">
-  <h3> Por que escolher este roteiro?</h3>
-  <div class="grid-box">
-    <div class="box verde">✅ Foco em enoturismo de alto nível</div>
-    <div class="box vermelho">✅ Grupos pequenos e personalizados</div>
-    <div class="box verde">✅ Suporte total durante a experiência</div>
-    <div class="box vermelho">✅ Saída garantida de Brasília</div>
+  <h3>Por que escolher este roteiro?</h3>
+  <div class="accordion-box">
+    <div class="box verde" onclick="toggleInfo(this)">
+      ✅ Foco em enoturismo de alto nível
+      <div class="info-text">Este roteiro é voltado para amantes do vinho e da boa gastronomia, com experiências exclusivas e atendimento diferenciado.</div>
+    </div>
+
+    <div class="box vermelho" onclick="toggleInfo(this)">
+      ✅ Grupos pequenos e personalizados
+      <div class="info-text">Turmas reduzidas garantem mais conforto, flexibilidade e atenção individualizada ao longo da viagem.</div>
+    </div>
+
+    <div class="box verde" onclick="toggleInfo(this)">
+      ✅ Suporte total durante a experiência
+      <div class="info-text">Você terá apoio antes, durante e após a viagem, com uma equipe pronta para resolver qualquer dúvida ou necessidade.</div>
+    </div>
+
+    <div class="box vermelho" onclick="toggleInfo(this)">
+      ✅ Saída garantida de Brasília
+      <div class="info-text">Facilidade e segurança: o pacote é completo, com voos confirmados diretamente da capital federal.</div>
+    </div>
   </div>
 </section>
 
 <section class="content">
   <h3>📆 Datas & promoções</h3>
-  <div class="grid-box">
-    <div class="box verde">• Próxima saída: <strong>03 de outubro</strong></div>
-    <div class="box vermelho">• Vagas limitadas!</div>
-    <div class="box verde">🎁 Promoção até <strong>30 de julho</strong> com brinde exclusivo!</div>
+  <div class="accordion-box">
+    <div class="box verde" onclick="toggleInfo(this)">
+      • Próxima saída: <strong>03 de outubro</strong>
+      <div class="info-text">Reserve com antecedência para garantir sua vaga nessa data especial com clima ideal e festas tradicionais em Portugal.</div>
+    </div>
+
+    <div class="box vermelho" onclick="toggleInfo(this)">
+      • Vagas limitadas!
+      <div class="info-text">Turmas exclusivas com no máximo 15 pessoas. As vagas se esgotam rápido – garanta a sua!</div>
+    </div>
+
+    <div class="box verde" onclick="toggleInfo(this)">
+      🎁 Promoção até <strong>30 de julho</strong> com brinde exclusivo!
+      <div class="info-text">Ao reservar até o fim de julho, você recebe um kit de boas-vindas com taça personalizada e vinho português premium.</div>
+    </div>
   </div>
 </section>
-
-<section class="content" id="contato" style="
-  background: url('6664041.jpg') no-repeat center center;
-  background-size: cover;
-  padding: 3rem 1rem;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);">
-  
-  <div class="form-container" style="
-    background-color: rgba(255, 255, 255, 0.95);
-    padding: 2rem;
-    border-radius: 10px;
-    max-width: 400px;
-    margin: 0 auto;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-    text-align: center;">
-    
+<section class="content" id="contato" style="background: url('6664041.jpg') no-repeat center center; background-size: cover; padding: 3rem 1rem; border-radius: 12px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);">
+  <div class="form-container" style="background-color: rgba(255, 255, 255, 0.95); padding: 2rem; border-radius: 10px; max-width: 400px; margin: 0 auto; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); text-align: center;">
     <h3 style="color: #561C24; margin-bottom: 1rem;">Formulário de Interesse</h3>
-    
-    <form action="https://formspree.io/f/mayvlrzk" method="POST" style="display: flex; flex-direction: column;">
+    <form action="formulario.php" method="POST" style="display: flex; flex-direction: column;">
       <input type="text" name="nome" placeholder="Nome completo" required style="padding: 0.8rem; margin-bottom: 1rem; border: 1px solid #ccc; border-radius: 6px;">
       <input type="email" name="email" placeholder="Seu e-mail" required style="padding: 0.8rem; margin-bottom: 1rem; border: 1px solid #ccc; border-radius: 6px;">
       <input type="tel" name="telefone" placeholder="Seu telefone" required style="padding: 0.8rem; margin-bottom: 1rem; border: 1px solid #ccc; border-radius: 6px;">
       <input type="text" name="data" placeholder="Data de interesse (opcional)" style="padding: 0.8rem; margin-bottom: 1rem; border: 1px solid #ccc; border-radius: 6px;">
+      <textarea name="mensagem" placeholder="Escreva uma observação ou dúvida" rows="4" style="padding: 0.8rem; margin-bottom: 1rem; border: 1px solid #ccc; border-radius: 6px;"></textarea>
       <button type="submit" style="background-color: #561C24; color: #fff; padding: 0.8rem; border: none; border-radius: 6px; font-size: 1rem; cursor: pointer;">Enviar</button>
     </form>
   </div>
 </section>
 
-
-
 <footer id="rodape">
-  <p>&copy; 2025 Experiências Portugal. Todos os direitos reservados.</p>
-  <p>📞 Telefone: (61) 99999-9999</p>
-  <p>✉️ E-mail: contato@experienciasportugal.com</p>
-  <p>🌐 Redes Sociais: @experienciasportugal</p>
-</footer>
+  <div class="contato-icons">
+    <div class="contato-item">
+      <a href="tel:+5561996226222" title="Ligar">
+        <i class="fas fa-phone"></i>
+      </a>
+      <span>+55 61 99622-6222</span>
+    </div>
 
+    <div class="contato-item">
+      <a href="mailto:atendimento@experienciasportugal.com.br" title="Enviar e-mail">
+        <i class="fas fa-envelope"></i>
+      </a>
+      <span>atendimento@experienciasportugal.com.br</span>
+    </div>
+
+    <div class="contato-item">
+      <a href="https://instagram.com/experienciasportugal" target="_blank" title="Instagram">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <span>@experienciasportugal</span>
+    </div>
+  </div>
+
+  <div class="footer-copy">
+  © 2025 Experiências Portugal · IPEMAI – Instituto de Pesquisa de Meio Ambiente e Inovação · CNPJ 35.848.629/0001-70
+</div>
+
+</footer>
 
 <a class="whatsapp-float" href="https://wa.me/+5561996226222?text=Olá!%20Tenho%20interesse%20no%20Experiência%20Portugal" target="_blank" title="Fale conosco no WhatsApp">
   <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" style="width: 32px; height: 32px;">
 </a>
 <script>
 let slideIndex = 1;
-showSlides(slideIndex);
-
-function plusSlides(n) {
-  showSlides(slideIndex += n);
-}
+let slides = document.getElementsByClassName("carousel-slide");
+let autoSlideTimeout;
 
 function showSlides(n) {
-  let i;
-  const slides = document.getElementsByClassName("carousel-slide");
-  if (n > slides.length) { slideIndex = 1 }
-  if (n < 1) { slideIndex = slides.length }
-  for (i = 0; i < slides.length; i++) {
+  if (n > slides.length) { slideIndex = 1; }
+  if (n < 1) { slideIndex = slides.length; }
+
+  for (let i = 0; i < slides.length; i++) {
     slides[i].style.display = "none";
   }
+
   slides[slideIndex - 1].style.display = "block";
+  updateIndicators();
 }
+
+function plusSlides(n) {
+  clearTimeout(autoSlideTimeout); // interrompe o automático ao clicar
+  showSlides(slideIndex += n);
+  autoSlide(); // reinicia auto
+}
+
+function currentSlide(n) {
+  clearTimeout(autoSlideTimeout);
+  showSlides(slideIndex = n);
+  autoSlide();
+}
+
+function updateIndicators() {
+  let dots = document.querySelectorAll('.carousel-indicators span');
+  dots.forEach((dot, i) => {
+    dot.classList.toggle('active', i === slideIndex - 1);
+  });
+}
+
+function autoSlide() {
+  autoSlideTimeout = setTimeout(() => {
+    plusSlides(1);
+  }, 5000);
+}
+
+window.addEventListener("DOMContentLoaded", () => {
+  showSlides(slideIndex);
+  autoSlide();
+});
 </script>
 
+<script>
+  function toggleInfo(element) {
+    // Fecha todos os outros se quiser abrir só um por vez:
+    document.querySelectorAll('.box').forEach(box => {
+      if (box !== element) {
+        box.classList.remove('active');
+      }
+    });
 
+    // Alterna o estado do clicado
+    element.classList.toggle('active');
+  }
+</script>
 
 </body>
 </html>
