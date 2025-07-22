@@ -7,7 +7,6 @@ $assunto = "Nova mensagem do site Experiências Portugal";
 $nome = $_POST['nome'] ?? '';
 $email = $_POST['email'] ?? '';
 $telefone = $_POST['telefone'] ?? '';
-$data = $_POST['data'] ?? '';
 $mensagem = $_POST['mensagem'] ?? '';
 
 // MONTA MENSAGEM
@@ -15,7 +14,6 @@ $corpo = "Nova mensagem recebida pelo formulário:\n\n";
 $corpo .= "Nome: $nome\n";
 $corpo .= "E-mail: $email\n";
 $corpo .= "Telefone: $telefone\n";
-$corpo .= "Data de interesse: $data\n";
 $corpo .= "Mensagem:\n$mensagem\n";
 
 // CABEÇALHO
@@ -25,8 +23,7 @@ $headers .= "Reply-To: $email\r\n";
 // ENVIA
 if (mail($destino, $assunto, $corpo, $headers)) {
     header("Location: obrigado.html");
-exit();
-
+    exit();
 } else {
     echo "<script>alert('Erro ao enviar mensagem. Tente novamente.');window.history.back();</script>";
 }

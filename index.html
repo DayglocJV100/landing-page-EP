@@ -104,11 +104,6 @@ header::before {
   z-index: 1;
 }
 
-
-
-
-
-
     .banner-conteudo {
       max-width: 80%;
       margin: 3rem auto;
@@ -493,6 +488,64 @@ nav {
   background-color: var(--vinho);
 }
 
+.bg-com-imagem {
+  background: url('6664041.jpg') no-repeat center center;
+  background-size: cover;
+  padding: 3rem 1rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.box-transparente h3 {
+  color: #fff;
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.4);
+}
+
+.box {
+  padding: 0.6rem 1rem;
+  font-size: 1.05rem;
+  margin-bottom: 0.8rem;
+  border-radius: 10px;
+  color: #fff;
+  font-weight: 500;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.6);
+  backdrop-filter: blur(3px);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s;
+}
+
+
+.box:hover {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+.box.vinho {
+  background-color: rgba(86, 28, 36, 0.9); /* vinho escuro com transparência */
+  color: #fff;
+  padding: 0.6rem 1rem;
+  font-size: 1.05rem;
+  margin-bottom: 0.8rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  font-weight: 500;
+  text-shadow: 0 1px 1px rgba(0,0,0,0.3);
+  transition: background-color 0.3s ease;
+  backdrop-filter: blur(3px);
+}
+
+.box.vinho:hover {
+  background-color: rgba(86, 28, 36, 1);
+}
+.box.incluso {
+  font-size: 0.95rem;
+  padding: 0.5rem 0.9rem;
+  margin-bottom: 1.2rem;
+  line-height: 1.4;
+  background-color: rgba(86, 28, 36, 0.85); /* vinho levemente mais claro */
+}
+
 
   </style>
 </head>
@@ -517,110 +570,119 @@ nav {
   <img src="Design sem nome 1.png" alt="Banner Portugal" class="imagem-banner">
 </section>
 
-<section class="content" id="o-que-inclui">
-  <h3>O que está incluído?</h3>
-  <div class="accordion-box">
-    <div class="box vermelho" onclick="toggleInfo(this)">
+<section class="content bg-com-imagem" id="o-que-inclui">
+  <div class="box-transparente">
+    <h3>O que está incluso na Experiências Portugal?</h3>
+
+    <div class="box vinho incluso" onclick="toggleInfo(this)">
       ✈️ Voos ida e volta saindo de Brasília
-      <div class="info-text">Passagens de ida e volta com horários confortáveis e sem conexões longas, garantindo mais tempo útil em Portugal.</div>
+      <div class="info-text">Voos com companhias confiáveis e horários planejados para seu conforto, saindo de Brasília.</div>
     </div>
 
-    <div class="box verde" onclick="toggleInfo(this)">
+    <div class="box vinho incluso" onclick="toggleInfo(this)">
       🏨 Hospedagens em locais selecionados
-      <div class="info-text">Hotéis de 4 e 5 estrelas com localização privilegiada, conforto e café da manhã incluso.</div>
+      <div class="info-text">Ficamos em hotéis charmosos e confortáveis, cuidadosamente escolhidos para proporcionar experiências autênticas e relaxantes.</div>
     </div>
 
-    <div class="box vermelho" onclick="toggleInfo(this)">
-      🍇 Visitas guiadas a vinícolas no Douro, Alentejo e Dão
-      <div class="info-text">Você será conduzido por sommeliers locais em vinícolas históricas, com acesso exclusivo a áreas restritas.</div>
+    <div class="box vinho incluso" onclick="toggleInfo(this)">
+      🍇 Visitas guiadas a Vinícolas e Lagar de azeite no Douro
+      <div class="info-text">Você conhecerá vinícolas e Lagar de azeite em Portugal, conhecendo todo o processo com guias especializados.</div>
     </div>
 
-    <div class="box verde" onclick="toggleInfo(this)">
+    <div class="box vinho incluso" onclick="toggleInfo(this)">
       🍷 Degustações premium com enólogos renomados
-      <div class="info-text">Prove vinhos premiados e descubra os segredos de produção diretamente com quem faz.</div>
+      <div class="info-text">Desfrute de provas de vinhos e azeites exclusivos, conduzidas por enólogos e azeitólogos experientes.</div>
     </div>
 
-    <div class="box vermelho" onclick="toggleInfo(this)">
+    <div class="box vinho incluso" onclick="toggleInfo(this)">
       🍽️ Experiências gastronômicas autênticas
-      <div class="info-text">Vivencie a culinária tradicional portuguesa com menus harmonizados e receitas regionais.</div>
+      <div class="info-text">Saboreie pratos típicos preparados por chefs locais em restaurantes tradicionais e premiados.</div>
     </div>
 
-    <div class="box verde" onclick="toggleInfo(this)">
+    <div class="box vinho incluso" onclick="toggleInfo(this)">
       🚐 Transporte terrestre com conforto e segurança
-      <div class="info-text">Veículos executivos e climatizados com motoristas treinados em turismo receptivo.</div>
+      <div class="info-text">Todos os deslocamentos internos são realizados em veículos modernos com ar-condicionado, motoristas treinados e segurança garantida.</div>
     </div>
 
-    <div class="box vermelho" onclick="toggleInfo(this)">
+    <div class="box vinho incluso" onclick="toggleInfo(this)">
       🧭 Acompanhamento de guia especializado
-      <div class="info-text">Guia bilíngue especializado em história, cultura e vinhos, acompanhando todo o percurso.</div>
+      <div class="info-text">Durante toda a viagem você estará acompanhado por um guia que entende da cultura local, facilitando cada etapa da experiência.</div>
     </div>
   </div>
 </section>
 
+
 <section class="content" id="roteiro-banner">
-  <h3>Roteiro resumido – 7 Noites e 9 dias</h3>
+  <h3>O que você vai viver na Experiências Portugal?</h3>
   <div class="carousel">
     <div class="carousel-slide fade">
-      <img src="vidagp Palace.jpg" alt="Vidago Palace">
-      <div class="carousel-text">Dia 1: Chegada e hospedagem no icônico Vidago Palace Hotel.</div>
+      <img src="PORTO1.jpg" alt="Porto 1">
+      <div class="carousel-text">Dia 00: Chegada ao Porto e recepção com vinho e vista panorâmica.</div>
     </div>
     <div class="carousel-slide fade">
-      <img src="img-douro-valley-wineries-to-visit.jpg" alt="Vale do Douro">
-      <div class="carousel-text">Dias 2-3: Explorando vinhedos no coração do Vale do Douro.</div>
+      <img src="porto.png" alt="Porto 2">
+      <div class="carousel-text">Dia 01: Dia livre para explorar o charme e a gastronomia do Porto.</div>
     </div>
     <div class="carousel-slide fade">
-      <img src="MW Douro Wine&Spa.jpg" alt="Spa e vinhos no Douro">
-      <div class="carousel-text">Dia 4: Relaxamento com vista no Douro Wine & Spa.</div>
+      <img src="peso da regua.png" alt="Peso da Régua">
+      <div class="carousel-text">Dia 02: Navegação pelo Douro até Peso da Régua com visita a vinícola.</div>
     </div>
     <div class="carousel-slide fade">
-      <img src="lamengo.webp" alt="Santuário de Lamego">
-      <div class="carousel-text">Dia 5: Visita ao Santuário de Lamego – arte e fé portuguesa.</div>
+      <img src="peso da regua e lamego.png" alt="Régua e Lamego">
+      <div class="carousel-text">Dia 03: Degustação em Peso da Régua e visita ao Santuário de Lamego.</div>
     </div>
     <div class="carousel-slide fade">
-      <img src="porto.jpg" alt="Cidade do Porto">
-      <div class="carousel-text">Dias 6-7: Encantos do Porto e degustação de vinhos do Porto.</div>
+      <img src="lamego.png" alt="Lamego">
+      <div class="carousel-text">Dia 04: Imersão em arte, história e cultura em Lamego.</div>
     </div>
     <div class="carousel-slide fade">
-      <img src="chaves.avif" alt="Cidade de Chaves">
-      <div class="carousel-text">Dia 8: Descubra Chaves – águas termais, cultura e charme histórico.</div>
+      <img src="sabrosa.png" alt="Sabrosa">
+      <div class="carousel-text">Dia 05: Visita a Sabrosa – vinhos, paisagens e herança de Fernão de Magalhães.</div>
+    </div>
+    <div class="carousel-slide fade">
+      <img src="entre rios .png" alt="Entre Rios">
+      <div class="carousel-text">Dia 06: Encerramento em Entre Rios – natureza, rios e despedida com charme.</div>
     </div>
 
-    <!-- Botões de navegação -->
+    <!-- Botões -->
     <button class="prev" onclick="plusSlides(-1)" aria-label="Slide anterior">&#10094;</button>
     <button class="next" onclick="plusSlides(1)" aria-label="Próximo slide">&#10095;</button>
 
-<div class="carousel-indicators">
+    <!-- Indicadores -->
+    <div class="carousel-indicators">
       <span onclick="currentSlide(1)"></span>
       <span onclick="currentSlide(2)"></span>
       <span onclick="currentSlide(3)"></span>
       <span onclick="currentSlide(4)"></span>
       <span onclick="currentSlide(5)"></span>
       <span onclick="currentSlide(6)"></span>
+      <span onclick="currentSlide(7)"></span>
     </div>
   </div>
 </section>
+
 <a class="whatsapp-float" href="https://wa.me/+5561996226222?text=Olá!%20Tenho%20interesse%20no%20Experiência%20Portugal" target="_blank" title="Fale conosco no WhatsApp">
   <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" style="width: 32px; height: 32px;">
 </a>
 <section class="content">
   <h3>Por que escolher este roteiro?</h3>
   <div class="accordion-box">
-    <div class="box verde" onclick="toggleInfo(this)">
+    <div class="box vinho" onclick="toggleInfo(this)">
       ✅ Foco em enoturismo de alto nível
       <div class="info-text">Este roteiro é voltado para amantes do vinho e da boa gastronomia, com experiências exclusivas e atendimento diferenciado.</div>
     </div>
 
-    <div class="box vermelho" onclick="toggleInfo(this)">
+    <div class="box vinho" onclick="toggleInfo(this)">
       ✅ Grupos pequenos e personalizados
       <div class="info-text">Turmas reduzidas garantem mais conforto, flexibilidade e atenção individualizada ao longo da viagem.</div>
     </div>
 
-    <div class="box verde" onclick="toggleInfo(this)">
+    <div class="box vinho" onclick="toggleInfo(this)">
       ✅ Suporte total durante a experiência
       <div class="info-text">Você terá apoio antes, durante e após a viagem, com uma equipe pronta para resolver qualquer dúvida ou necessidade.</div>
     </div>
 
-    <div class="box vermelho" onclick="toggleInfo(this)">
+    <div class="box vinho" onclick="toggleInfo(this)">
       ✅ Saída garantida de Brasília
       <div class="info-text">Facilidade e segurança: o pacote é completo, com voos confirmados diretamente da capital federal.</div>
     </div>
@@ -628,37 +690,49 @@ nav {
 </section>
 
 <section class="content">
-  <h3>📆 Datas & promoções</h3>
+  <h3>📆 Datas e promoções</h3>
   <div class="accordion-box">
-    <div class="box verde" onclick="toggleInfo(this)">
-      • Próxima saída: <strong>03 de outubro</strong>
+    <div class="box vinho" onclick="toggleInfo(this)">
+      • Data da experiência:  <strong> 28/09/25 a 04/10/25</strong>
       <div class="info-text">Reserve com antecedência para garantir sua vaga nessa data especial com clima ideal e festas tradicionais em Portugal.</div>
     </div>
 
-    <div class="box vermelho" onclick="toggleInfo(this)">
+    <div class="box vinho" onclick="toggleInfo(this)">
       • Vagas limitadas!
       <div class="info-text">Turmas exclusivas com no máximo 15 pessoas. As vagas se esgotam rápido – garanta a sua!</div>
     </div>
 
-    <div class="box verde" onclick="toggleInfo(this)">
-      🎁 Promoção até <strong>30 de julho</strong> com brinde exclusivo!
+    <div class="box vinho" onclick="toggleInfo(this)">
+      🎁 Promoção até <strong>08 de agosto</strong> com brinde exclusivo!
       <div class="info-text">Ao reservar até o fim de julho, você recebe um kit de boas-vindas com taça personalizada e vinho português premium.</div>
     </div>
   </div>
 </section>
+<section class="content">
+  <h3 style="text-align: center; color: #561C24; margin-bottom: 0.8rem;">Realização e Apoio</h3>
+  <div class="logo-parceiros" style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 2rem;">
+    <img src="viamar.png" alt="Viamar Viagens" style="max-height: 120px;">
+    <img src="possomais.png" alt="Posso Mais Educação Profissional" style="max-height: 120px;">
+    <img src="fortifica.png" alt="Confraria Fortifica" style="max-height: 120px;">
+    <img src="ipemai.png" alt="IPEMAI" style="max-height: 120px;">
+    <img src="lexus.png" alt="Lexus Brasília" style="max-height: 120px;">
+  </div>
+</section>
+
+
 <section class="content" id="contato" style="background: url('6664041.jpg') no-repeat center center; background-size: cover; padding: 3rem 1rem; border-radius: 12px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);">
   <div class="form-container" style="background-color: rgba(255, 255, 255, 0.95); padding: 2rem; border-radius: 10px; max-width: 400px; margin: 0 auto; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); text-align: center;">
     <h3 style="color: #561C24; margin-bottom: 1rem;">Formulário de Interesse</h3>
     <form action="formulario.php" method="POST" style="display: flex; flex-direction: column;">
       <input type="text" name="nome" placeholder="Nome completo" required style="padding: 0.8rem; margin-bottom: 1rem; border: 1px solid #ccc; border-radius: 6px;">
-      <input type="email" name="email" placeholder="Seu e-mail" required style="padding: 0.8rem; margin-bottom: 1rem; border: 1px solid #ccc; border-radius: 6px;">
-      <input type="tel" name="telefone" placeholder="Seu telefone" required style="padding: 0.8rem; margin-bottom: 1rem; border: 1px solid #ccc; border-radius: 6px;">
-      <input type="text" name="data" placeholder="Data de interesse (opcional)" style="padding: 0.8rem; margin-bottom: 1rem; border: 1px solid #ccc; border-radius: 6px;">
+      <input type="email" name="email" placeholder="e-mail" required style="padding: 0.8rem; margin-bottom: 1rem; border: 1px solid #ccc; border-radius: 6px;">
+      <input type="tel" name="telefone" placeholder="Telefone" required style="padding: 0.8rem; margin-bottom: 1rem; border: 1px solid #ccc; border-radius: 6px;">
       <textarea name="mensagem" placeholder="Escreva uma observação ou dúvida" rows="4" style="padding: 0.8rem; margin-bottom: 1rem; border: 1px solid #ccc; border-radius: 6px;"></textarea>
       <button type="submit" style="background-color: #561C24; color: #fff; padding: 0.8rem; border: none; border-radius: 6px; font-size: 1rem; cursor: pointer;">Enviar</button>
     </form>
   </div>
 </section>
+
 
 <footer id="rodape">
   <div class="contato-icons">
