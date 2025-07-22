@@ -546,6 +546,19 @@ nav {
   background-color: rgba(86, 28, 36, 0.85); /* vinho levemente mais claro */
 }
 
+.selo-intermediario {
+  position: absolute;
+  top: 100%; /* coloca após a imagem */
+  left: 2rem;
+  transform: translateY(-50%); /* sobe metade do selo */
+  width: 120px;
+  z-index: 20;
+}
+
+
+.selo-intermediario img {
+  width: 100%;
+}
 
   </style>
 </head>
@@ -557,20 +570,28 @@ nav {
   <a href="#rodape">Contato</a>
 </nav>
 
+
 <header id="inicio">
   <img src="logo.png" alt="Logo Experiências Portugal" class="logo-header">
 </header>
 
-<section class="banner-conteudo">
+<section class="banner-conteudo" style="position: relative;">
   <div class="texto-superior">
     <img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Flag_of_Portugal.svg" alt="Bandeira" style="width: 50px;">
     <h2>Explore os vinhos de Portugal em uma experiência inesquecível</h2>
     <p>Roteiros exclusivos com saídas de Brasília. Viva o charme das vinícolas portuguesas com conforto, gastronomia e história.</p>
   </div>
+
   <img src="Design sem nome 1.png" alt="Banner Portugal" class="imagem-banner">
+
+  <!-- Selo posicionado parcialmente sobre a próxima section -->
+  <div class="selo-intermediario">
+    <img src="selo.png" alt="Selo Missão Douro 2025">
+  </div>
 </section>
 
-<section class="content bg-com-imagem" id="o-que-inclui">
+
+<section class="content bg-com-imagem" id="o-que-inclui" style="position: relative;">
   <div class="box-transparente">
     <h3>O que está incluso na Experiências Portugal?</h3>
 
@@ -590,7 +611,7 @@ nav {
     </div>
 
     <div class="box vinho incluso" onclick="toggleInfo(this)">
-      🍷 Degustações premium com enólogos renomados
+      🍷 Degustações premium 
       <div class="info-text">Desfrute de provas de vinhos e azeites exclusivos, conduzidas por enólogos e azeitólogos experientes.</div>
     </div>
 
@@ -699,12 +720,12 @@ nav {
 
     <div class="box vinho" onclick="toggleInfo(this)">
       • Vagas limitadas!
-      <div class="info-text">Turmas exclusivas com no máximo 15 pessoas. As vagas se esgotam rápido – garanta a sua!</div>
+      <div class="info-text">Turmas exclusivas, as vagas se esgotam rápido, garanta a sua!</div>
     </div>
 
     <div class="box vinho" onclick="toggleInfo(this)">
-      🎁 Promoção até <strong>08 de agosto</strong> com brinde exclusivo!
-      <div class="info-text">Ao reservar até o fim de julho, você recebe um kit de boas-vindas com taça personalizada e vinho português premium.</div>
+      🎁 Promoção até  <strong>18 de agosto</strong> com desconto especial!
+      <div class="info-text">Ao reservar até 18 de agosto, você garante um desconto exclusivo.</div>
     </div>
   </div>
 </section>
